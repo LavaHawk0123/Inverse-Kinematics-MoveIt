@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+ <arg name="file"  default="$(find simulation)/scripts/markers.csv" />
+	<node pkg="simulation" type="objective8.py" name="objective8" output="screen"> 
+		<param name="file" value="$(arg file)" />
+	</node>
+</launch>

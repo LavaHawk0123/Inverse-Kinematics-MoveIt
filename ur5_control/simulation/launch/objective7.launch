@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+ <arg name="tag_id" />
+ <arg name="file"  default="$(find simulation)/scripts/markers.csv" />
+	<node pkg="simulation" type="objective7.py" name="objective7" output="screen"> 
+		<param name="file" value="$(arg file)" />
+		<param name="tag_id" value="$(arg tag_id)" />
+	</node>
+</launch>

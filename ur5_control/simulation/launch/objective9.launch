@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="simulation" type="objective9.py" name="objective9" output="screen"/>
+</launch>

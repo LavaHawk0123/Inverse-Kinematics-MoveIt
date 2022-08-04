@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- gazebo -->
+  <include file="$(find ur_gazebo)/launch/ur3.launch"/>
+
+  <!-- moveit -->
+  <include file="$(find ur3_moveit_config)/launch/ur3_moveit_planning_execution.launch">
+    <arg name="sim" default="true" />
+  </include>
+
+  <!-- rviz -->
+  <include file="$(find ur3_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" default="true"/>
+  </include>
+
+  <node pkg="simulation" type="gripper.py"  name="move_group_python_gripper" output="screen"/> 
+
+  <!-- Joint Constraint -->
+  <node pkg="simulation" type="joint_constraint.py"  name="w2lconstraint" output="screen"/> 
+
+  <!-- ArUco Detect -->
+	<include file = "$(find simulation)/launch/aruco_detect.launch"/>
+</launch>

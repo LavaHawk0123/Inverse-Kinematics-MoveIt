@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+ <arg name="sequence" type="str" />
+ <arg name="file"  default="$(find simulation)/scripts/markers.csv" />
+	<node pkg="simulation" type="objective2.py" name="objective2" output="screen"> 
+		<param name="file" value="$(arg file)" />
+		<param name="sequence" value="$(arg sequence)" />
+	</node>
+</launch>
